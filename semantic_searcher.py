@@ -44,8 +44,6 @@ if __name__ == '__main__':
     else:
         sentences_all_file = "example.txt"
 
-
-
     # read all lines in text file and add them to "sentences_all"
     sentences_all = []
     with open(sentences_all_file) as fp:
@@ -54,11 +52,10 @@ if __name__ == '__main__':
         while line:
             if line != "\n":
                 # print("Line {}: {}".format(cnt, line.strip()))
-                sentences_all.append(line)
+                sentences_all.append(line[:-1])
                 cnt += 1
 
             line = fp.readline()
-
 
     print('You are comparing: "'+ input_s + '" to all sentences in: '+sentences_all_file)
 
