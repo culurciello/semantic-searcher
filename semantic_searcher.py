@@ -37,7 +37,7 @@ if __name__ == '__main__':
     if len(sys.argv)>1:
         input_s = sys.argv[1]
     else:
-        input_s = "cosine similarity"
+        input_s = "I want to use the cosine similarity function"
 
     if len(sys.argv)>2:
         sentences_all_file = sys.argv[2]
