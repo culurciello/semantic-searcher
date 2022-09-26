@@ -1,0 +1,20 @@
+Obtaining the closest observations in the vector space
+We now have two numerical representations of texts (embeddings):
+our original text database and our query (here, the description of a python function). 
+Our goal: get the texts in the database that have the closest meaning to our query.
+
+Most similar queries will be closer together in the vector space, and queries that differ most will be farther apart.
+
+The following figure (obtained from the Sentence Transformers documentation) 
+shows in blue how we would represent the code search net dataset and in orange your 'Create a dictionary' query, 
+which is outside the original dataset. 
+The blue dot with the annotation 'Relevant Document' would be our search's most similar Github function.
+
+Representation of embeddings in a 2D vector space. Obtained from the Sentence Transformers documentation.
+We compare the embedding of our query with the embeddings of each of the texts in the database 
+(there are easier ways to do it, but in this case, it won't be necessary) 
+using the cosine similarity function, better explained in the 
+[Pytorch documentation](https://pytorch.org/docs/stable/generated/torch.nn.functional.cosine_similarity.html). 
+The results of the cosine similarity function will detect which of the texts in the database are closest to our query in vector space.
+
+This is what we did in the dynamic example above!
