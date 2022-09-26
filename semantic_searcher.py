@@ -1,5 +1,7 @@
+# E. Culurciello, September 2022
 # text similarity
 # inspired by: https://newscatcherapi.com/blog/ultimate-guide-to-text-similarity-with-python
+# also: https://huggingface.co/spaces/sentence-transformers/Sentence_Transformers_for_semantic_search
 
 import sys
 import numpy as np
@@ -48,13 +50,8 @@ if __name__ == '__main__':
     sentences_all = []
     with open(sentences_all_file) as fp:
         line = fp.readline()
-        cnt = 1
         while line:
-            if line != "\n":
-                # print("Line {}: {}".format(cnt, line.strip()))
-                sentences_all.append(line[:-1])
-                cnt += 1
-
+            sentences_all.append(line[:-1])
             line = fp.readline()
 
     print('You are comparing: "'+ input_s + '" to all sentences in: '+sentences_all_file)
@@ -63,4 +60,4 @@ if __name__ == '__main__':
 
     print("Comparing results:")
     for i,value in enumerate(similarity):
-        print('{:.2f}'.format(similarity[i]), sentences_all[sorted_idx[i]])
+        print('{:.2f}'.format(similarity[i]), 'line: '+str(sorted_idx[i]+1), sentences_all[sorted_idx[i]])
