@@ -15,9 +15,9 @@ np.set_printoptions(precision=2)
 
 def match_text(sentences_all, input_s):
     print('Embedding all possible sentences...')
-    embeddings = model.encode(sentences_all, convert_to_tensor=True)
+    embeddings = model.encode(sentences_all, convert_to_tensor=True) # 1024 vector per sentence
     print('Embedding input sentence')
-    embedinput = model.encode(input_s, convert_to_tensor=True)
+    embedinput = model.encode(input_s, convert_to_tensor=True) # 1024 vector per sentence
     print('Done!')
 
     similarity = []
